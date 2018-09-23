@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html {
+      font-family: '游ゴシック', 'Hiragino Kaku Gothic ProN', 'メイリオ', meiryo, 'Helvetica Neue', sans-serif;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-image: url(https://images.unsplash.com/photo-1525915473429-44eb9efc26ad?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d023cf56385829cdb54488bb0db776de&auto=format&fit=crop&w=934&q=80);
+        background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    #app {
+      padding: 50px;
+    }
+
+    .entry {
+      width: 100%;
+      line-height: 80px;
+      color: #fff;
+      display: flex;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      opacity: 0.9;
+    }
+
+    .entry:hover {
+      opacity: 1;
+      transition: all 0.3s;
+    }
+
+    .entry>div {
+      margin-left: 30px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div v-for="(c, i) in colors" class="entry" v-bind:style="{backgroundColor: c.code}">
+      <div>ver.{{i + 1}}</div>
+      <div>{{c.name}}</div>
+      <div>( {{c.yomi}} )</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          colors: [
+            {
+              name: '今様',
+              yomi: 'いまよう',
+              code: '#d0576b',
+            },
+            {
+              name: '緑青',
+              yomi: 'ろくしょう',
+              code: '#47885e',
+            },
+            {
+              name: '鳩羽',
+              yomi: 'はとば',
+              code: '#95859c',
+            },
+            {
+              name: '似せ紫',
+              yomi: 'にせむらさき',
+              code: '#513743',
+            },
+            {
+              name: '本紫',
+              yomi: 'ほんむらさき',
+              code: '#65318e',
+            },
+            {
+              name: '弁柄',
+              yomi: 'べんがら',
+              code: '#8f2e14',
+            },
+            {
+              name: '藤黄',
+              yomi: 'とうおう',
+              code: '#f7c114',
+            },
+          ],
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>
